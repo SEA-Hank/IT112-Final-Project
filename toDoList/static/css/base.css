@@ -24,7 +24,7 @@ header {
   border-radius: 3px;
 }
 main {
-  min-height: 550px;
+  /* min-height: 550px; */
 }
 footer {
   background: #1687a7;

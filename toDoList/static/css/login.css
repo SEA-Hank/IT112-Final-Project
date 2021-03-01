@@ -1,0 +1,68 @@
+form.login-form {
+  width: 450px;
+  padding: 10px;
+  margin: 50px auto 50px auto;
+  background: #1687a7;
+  border-radius: 3px;
+}
+form.login-form p {
+  padding: 10px;
+}
+form.login-form label {
+  display: block;
+  color: #321f28;
+  font-style: italic;
+  padding: 5px 0px;
+}
+#id_password,
+#id_username {
+  height: 30px;
+  outline: none;
+  width: 345px;
+  border: 1px solid #61b15a;
+  border-radius: 3px;
+}
+#submit {
+  width: 100%;
+  padding: 10px 0px;
+  cursor: pointer;
+  display: block;
+  margin: 0px auto;
+  background: #83a95c;
+  border-radius: 3px;
+  border: 1px solid #83a95c;
+  color: white;
+  font-weight: bolder;
+}
+ul.errorlist {
+  padding: 10px;
+}
+ul.errorlist li {
+  list-style: none;
+  color: #373a40;
+  font-size: 14px;
+  font-style: italic;
+  color: #fca652;
+}
+
+p.goodbye {
+  color: white;
+  background: #ff414d;
+  padding: 10px;
+  width: 250px;
+  margin: 50px auto;
+  text-align: center;
+  border-radius: 3px;
+  letter-spacing: 2px;
+}
+
+p.welcome {
+  color: white;
+  background: #4e8d7c;
+  padding: 10px;
+  width: 250px;
+  margin: 50px auto;
+  text-align: center;
+  border-radius: 3px;
+  letter-spacing: 2px;
+}

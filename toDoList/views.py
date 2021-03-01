@@ -1,16 +1,14 @@
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
+from .config import navs
 
 # Create your views here.
 
 
-def getNav():
-    nav = [{"label": "List View", "url": "index"},
-           {"label": "Event Type", "url": "index"},
-           {"label": "Add Event", "url": "index"},
-           {"label": "Login", "url": "index"},
-           {"label": "logout", "url": "index"}]
-    return nav
-
-
 def index(request):
-    return render(request, 'index.html', {"title": "list view", "navs": getNav()})
+    return render(request, 'index.html', {"title": "list view", "navs": navs})
+
+
+@login_required(login_url='/todolist/login')
+def welcome(request):
+    return render(request, 'welcome.html', {"title": "welcome", "navs": navs, "username": request.user.username})
