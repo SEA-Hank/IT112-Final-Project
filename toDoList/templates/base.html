@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href={% static 'css/base.css' %} rel="stylesheet" type="text/css"/>
+    <title>{{title}}</title>
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="info">IT 112 - HANK HE - FINAL PROJECT</div>
+      <header>
+        <ul class="nav-ul clean">
+          {% for nav in navs %}
+          <li class="nav-li"><a href="{% url nav.url %}">{{nav.label}}</a></li>
+          {% endfor %} {% comment %}
+          <li><a href="{% url 'index' %}">List View</a></li>
+          <li><a href="{% url 'index' %}">Event Type</a></li>
+          <li><a href="{% url 'addevent' %}">Add Event</a></li>
+          <li><a href="{% url 'login' %}">Login</a></li>
+          <li><a href="{% url 'logout' %}">Logout</a></li>
+          {% endcomment %}
+        </ul>
+      </header>
+      <main>{% block content %} {% endblock content %}</main>
+      <footer>IT 112 W21 3180 - PYTHON WEB PROGRAMMING</footer>
+    </div>
+  </body>
+</html>
