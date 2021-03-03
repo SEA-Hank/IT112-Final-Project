@@ -1,0 +1,84 @@
+table.event-type-table {
+  width: 600px;
+  border-collapse: collapse;
+  margin: 30px auto;
+}
+
+table.event-type-table tr:hover {
+  background: #ffffdd;
+}
+tr.tr-bg-color {
+  background-color: #bedcfa;
+}
+tr.selected {
+  background-color: #fcdada !important;
+}
+
+table.event-type-table td {
+  padding: 5px 10px;
+  border: 1px solid #7e8a97;
+  text-align: center;
+}
+
+td.td-name {
+  width: 100px;
+}
+
+span.span-color {
+  display: block;
+  height: 25px;
+  width: 50px;
+  border-radius: 3px;
+  margin: 0px auto;
+}
+
+div.no-data {
+  width: 600px;
+  border: 1px solid #7e8a97;
+  padding: 40px;
+  text-align: center;
+  margin: 30px auto;
+  color: #900d0d;
+  border-radius: 3px;
+}
+
+div.operator {
+  width: 600px;
+  border: 1px solid #f9d56e;
+  border-radius: 3px;
+  margin: 30px auto;
+  padding: 5px 5px;
+  background: #ffffdd;
+}
+div.operator button {
+  padding: 3px 15px;
+  cursor: pointer;
+}
+
+button.add {
+  border-radius: 3px;
+  border: 1px solid #4e8d7c;
+  color: #4e8d7c;
+  outline: none;
+  font-style: italic;
+  background: white;
+  font-weight: bolder;
+}
+button.add:hover {
+  background: #4e8d7c;
+  color: white;
+}
+
+button.delete {
+  border-radius: 3px;
+  border: 1px solid #aa2b1d;
+  color: #aa2b1d;
+  outline: none;
+  font-style: italic;
+  background: white;
+  font-weight: bolder;
+}
+button.delete:hover {
+  background: #aa2b1d;
+  color: white;
+}

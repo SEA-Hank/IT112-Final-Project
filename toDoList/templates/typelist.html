@@ -1,0 +1,50 @@
+{% extends 'base.html' %} {% block content %}
+<div class="operator">
+<button class="add">add</button>
+<button class="delete" onclick="deleteBtnOnClick()">detele</button>
+</div>
+{% if count == 0   %}
+<div class="no-data">
+NONE OF DATA
+</div>
+{% else %}
+<form id="itemsForm" action="{% url 'typelistdelete' %}" method="post">
+  {%  csrf_token %}
+  <table class="event-type-table">
+    <tr>
+      <td></td>
+      <td>TYPE</td>
+      <td>COLOR</td>
+      <td>CREATEDBY</td>
+      <td>CREATEDTIME</td>
+    </tr>
+    {% for eventType in eventTypeList %}
+    <tr class="{% cycle 'tr-bg-color' "" %}">
+      <td> <input type="checkbox" name="eventtype_ids" value={{eventType.id}} onchange="checkboxOnChange(this)" /></td>
+      <td class="td-name">{{eventType.name}}</td>
+      <td><span class="span-color" style="background:{{eventType.color}}"></span></td>
+      <td>{{eventType.createdByUser.username}}</td>
+      <td>{{eventType.createdTime | date:'m/d/Y' }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+<div id="modal-comfirmTodelete" class="modal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      {% comment %} <div class="modal-header">
+        <h5 class="modal-title">Are you sure delete the item?</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>  {% endcomment %}
+      <div class="modal-body">
+        <p id="modal-message"></p>
+      </div>
+      <div class="modal-footer">
+        <button id="btn-modal-cancel" type="button" class="btn btn-secondary" data-bs-dismiss="modal">cancel</button>
+        <button id="btn-modal-delete" type="button" class="btn btn-danger" onclick="comfirmDelBtnOnClick()">delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+{% endblock %}
