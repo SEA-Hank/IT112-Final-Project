@@ -12,6 +12,7 @@ def error(request):
 
 
 def index(request):
+    request.session["msg"] = "hi"
     return render(request, 'index.html', {"title": "list view", "navs": navs})
 
 
@@ -22,9 +23,12 @@ def welcome(request):
 
 def typelist(request):
     try:
+        msg = request.session.get("msg")
+        if(msg != None):
+            del request.session["msg"]
         eventTypeList = EventType.objects.all()
         count = eventTypeList.count()
-        return render(request, 'typelist.html', {"title": "Event Type List", "navs": navs, "eventTypeList": eventTypeList, "count": count})
+        return render(request, 'typelist.html', {"title": "Event Type List", "navs": navs, "eventTypeList": eventTypeList, "count": count, "msg": msg})
     except:
         return redirect('error')
 
@@ -37,6 +41,7 @@ def typelistdelete(request):
         ids = request.POST.getlist("eventtype_ids", [])
         eventtypes = EventType.objects.filter(pk__in=ids)
         eventtypes.delete()
+        request.session["msg"] = "delete success!"
         return redirect('typelist')
     except:
         return redirect('error')

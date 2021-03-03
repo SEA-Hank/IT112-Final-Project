@@ -1,8 +1,24 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} 
+{% load static %} 
+
+{% block css %} 
+  <link href={% static 'css/eventtype.css' %} rel="stylesheet" type="text/css"/> 
+{% endblock %} 
+
+{% block javascript %} 
+   <script src="{% static 'js/index.js' %}"></script>
+{% endblock %} 
+
+{% block content %}
 <div class="operator">
 <button class="add">add</button>
 <button class="delete" onclick="deleteBtnOnClick()">detele</button>
 </div>
+{% if msg != None %}
+<div id="alert-msg" class="alert alert-success fade show reset-style" role="alert">
+  {{msg}}
+</div>
+{% endif %}
 {% if count == 0   %}
 <div class="no-data">
 NONE OF DATA
@@ -32,10 +48,6 @@ NONE OF DATA
 <div id="modal-comfirmTodelete" class="modal" tabindex="-1">
   <div class="modal-dialog">
     <div class="modal-content">
-      {% comment %} <div class="modal-header">
-        <h5 class="modal-title">Are you sure delete the item?</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>  {% endcomment %}
       <div class="modal-body">
         <p id="modal-message"></p>
       </div>

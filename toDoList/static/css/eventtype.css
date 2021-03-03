@@ -82,3 +82,9 @@ button.delete:hover {
   background: #aa2b1d;
   color: white;
 }
+
+div.reset-style {
+  padding: 5px;
+  width: 50%;
+  margin: 0px auto;
+}
