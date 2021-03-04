@@ -18,8 +18,9 @@ urlpatterns = [
     path('error', views.error, name='error'),
 
     path('', views.index, name='index'),
-    path('', views.index, name='addevent'),
     path('welcome', views.welcome, name="welcome"),
     path('typelist', views.typelist, name="typelist"),
-    path('typelistdelete', views.typelistdelete, name="typelistdelete")
+    path('typelistdelete', views.typelistdelete, name="typelistdelete"),
+    path('typesave/<int:reqid>', views.typesave, name="typesave"),
+    path('typesave', views.typesave, name="typesave"),
 ]

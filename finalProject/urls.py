@@ -21,3 +21,4 @@ urlpatterns = [
     path('todolist/', include('toDoList.urls'))
     # path('accounts/', include('django.contrib.auth.urls'))
 ]
+# handler404 = 'toDoList.views.page_not_found_view'

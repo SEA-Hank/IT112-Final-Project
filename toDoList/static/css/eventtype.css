@@ -23,6 +23,10 @@ table.event-type-table td {
 td.td-name {
   width: 100px;
 }
+td.td-name a {
+  color: black;
+  text-decoration: underline;
+}
 
 span.span-color {
   display: block;

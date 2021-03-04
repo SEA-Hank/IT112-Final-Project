@@ -11,7 +11,7 @@
 
 {% block content %}
 <div class="operator">
-<button class="add">add</button>
+<button class="add" onclick="javascript:window.location.href='{% url 'typesave' %}';">add</button>
 <button class="delete" onclick="deleteBtnOnClick()">detele</button>
 </div>
 {% if msg != None %}
@@ -37,7 +37,7 @@ NONE OF DATA
     {% for eventType in eventTypeList %}
     <tr class="{% cycle 'tr-bg-color' "" %}">
       <td> <input type="checkbox" name="eventtype_ids" value={{eventType.id}} onchange="checkboxOnChange(this)" /></td>
-      <td class="td-name">{{eventType.name}}</td>
+      <td class="td-name"> <a href="{% url 'typesave' reqid=eventType.id %}">{{eventType.name}}</a></td>
       <td><span class="span-color" style="background:{{eventType.color}}"></span></td>
       <td>{{eventType.createdByUser.username}}</td>
       <td>{{eventType.createdTime | date:'m/d/Y' }}</td>
