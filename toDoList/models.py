@@ -17,3 +17,20 @@ class EventType(models.Model):
         db_table = 'EventType'
         verbose_name_plural = 'EventTypes'
         ordering = ["createdTime"]
+
+
+class Event(models.Model):
+    title = models.CharField(max_length=200)
+    time = models.DateTimeField()
+    description = models.TextField()
+    eventType = models.ForeignKey(EventType, on_delete=models.CASCADE)
+    createdByUser = models.ForeignKey(User, on_delete=models.CASCADE)
+    createdTime = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        db_table = 'Event'
+        verbose_name_plural = 'Events'
+        ordering = ["createdTime"]

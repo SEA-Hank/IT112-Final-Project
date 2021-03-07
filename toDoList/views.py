@@ -1,15 +1,11 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_http_methods
-from .models import EventType
+from .models import EventType, Event
 from .config import navs
 from .form import EventTypeForm
 
 # Create your views here.
-
-
-def page_not_found_view(request, exception):
-    return render(request, '402.html', {"title": "error", "navs": navs})
 
 
 def error(request):
@@ -17,7 +13,17 @@ def error(request):
 
 
 def index(request):
-    return render(request, 'index.html', {"title": "list view", "navs": navs})
+    try:
+        eventlist = Event.objects.all()
+        eventTypeCount = EventType.objects.count()
+        return render(request, 'index.html', {"title": "Event List", "navs": navs, "eventlist": eventlist, "eventTypeCount": eventTypeCount})
+    except:
+        return redirect('error')
+
+
+@login_required(login_url='login')
+def eventsave(request, reqid=None):
+    pass
 
 
 @login_required(login_url='login')

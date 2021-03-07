@@ -19,8 +19,12 @@ urlpatterns = [
 
     path('', views.index, name='index'),
     path('welcome', views.welcome, name="welcome"),
+
     path('typelist', views.typelist, name="typelist"),
     path('typelistdelete', views.typelistdelete, name="typelistdelete"),
     path('typesave/<int:reqid>', views.typesave, name="typesave"),
     path('typesave', views.typesave, name="typesave"),
+
+    path('eventsave/<int:reqid>', views.eventsave, name="eventsave"),
+    path('eventsave', views.eventsave, name="eventsave")
 ]

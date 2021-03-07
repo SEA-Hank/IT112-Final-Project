@@ -1,0 +1,50 @@
+ul#event-ul {
+  width: 80%;
+  margin: 20px auto;
+}
+li.event-li {
+  list-style: none;
+  border: 1px solid;
+  border-radius: 3px;
+  padding: 10px 10px;
+  margin: 20px 0px;
+  cursor: pointer;
+}
+
+li.event-empty {
+  list-style: none;
+  border: 1px solid #666;
+  border-radius: 3px;
+  color: #900d0d;
+  text-align: center;
+  padding: 50px;
+}
+
+span.span-type {
+  font-weight: bolder;
+}
+
+span.event-time {
+  float: right;
+  margin-right: 30px;
+}
+
+span.event-title {
+  margin-left: 30px;
+  text-decoration: underline;
+}
+
+a.event-new {
+  color: white;
+  background: #4e8d7c;
+  padding: 0px 0px;
+  display: inline-block;
+  width: 150px;
+  text-align: center;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+a.event-new:hover {
+  color: #f6830f;
+}

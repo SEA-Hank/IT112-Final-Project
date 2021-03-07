@@ -20,14 +20,8 @@
       <header>
         <ul class="nav-ul clean">
           {% for nav in navs %}
-          <li class="nav-li"><a href="{% url nav.url %}">{{nav.label}}</a></li>
-          {% endfor %} {% comment %}
-          <li><a href="{% url 'index' %}">List View</a></li>
-          <li><a href="{% url 'index' %}">Event Type</a></li>
-          <li><a href="{% url 'addevent' %}">Add Event</a></li>
-          <li><a href="{% url 'login' %}">Login</a></li>
-          <li><a href="{% url 'logout' %}">Logout</a></li>
-          {% endcomment %}
+          <li class="nav-li" style="border-color:"><a href="{% url nav.url %}">{{nav.label}}</a></li>
+          {% endfor %}
         </ul>
       </header>
       <main>{% block content %} {% endblock content %}</main>

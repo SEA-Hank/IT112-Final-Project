@@ -24,7 +24,7 @@ td.td-name {
   width: 100px;
 }
 td.td-name a {
-  color: black;
+  color: black !important;
   text-decoration: underline;
 }
 
