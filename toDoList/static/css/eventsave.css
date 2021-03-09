@@ -1,0 +1,27 @@
+form#saveform {
+  width: 450px;
+  margin: 50px auto;
+}
+form#saveform th {
+  width: 120px;
+  vertical-align: middle;
+}
+
+form#saveform td {
+  width: 120px;
+  vertical-align: middle;
+}
+
+#id_time_0 {
+  margin-top: 5px;
+  width: 160px;
+}
+
+#id_time_1 {
+  margin-top: 5px;
+  width: 130px;
+}
+
+#div-delete {
+  margin-top: 10px;
+}

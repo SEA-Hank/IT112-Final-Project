@@ -23,3 +23,13 @@ function eventNew(eventTypeCount, url) {
     modal_eventTypeEmpty.show();
   }
 }
+
+function pageOnLoad() {
+  var alertNode = document.getElementById("alert-msg");
+  if (alertNode != null) {
+    setTimeout(() => {
+      var bsalert = new bootstrap.Alert(alertNode);
+      bsalert.close();
+    }, 1500);
+  }
+}

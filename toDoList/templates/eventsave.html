@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %} 
+{% block css %} 
+    <link href={% static 'css/eventsave.css' %} rel="stylesheet" type="text/css"/> 
+{% endblock %} 
+{% block content %}
+  <form id="saveform" method="POST">
+  <table class="table">
+    {% csrf_token %} 
+    {{ form.as_table }}
+  </table>
+  <div class="d-grid gap-2">
+   <button type="submit" name="action" class="btn btn-success" value="save">Save</button>
+  </div>
+  {% if showDel %}
+  <div id="div-delete" class="d-grid gap-2">
+    <button type="submit" name="action" class="btn btn-danger" value="delete" >Delete</button>
+  </div>
+  {% endif %}
+</form>
+{% endblock %}

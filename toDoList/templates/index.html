@@ -11,6 +11,13 @@
 {% endblock %} 
 
 {% block content %}
+
+{% if msg != None %}
+<div id="alert-msg" class="alert alert-success fade show reset-style" role="alert">
+  {{msg}}
+</div>
+{% endif %}
+
 <div>
     <p><a class="event-new" onclick="eventNew({{eventTypeCount}},'{% url 'eventsave' %}')">NEW EVENT</a></p>
     <ul id="event-ul">
